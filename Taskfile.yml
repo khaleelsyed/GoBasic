@@ -8,13 +8,13 @@ dotenv: ['.env']
 tasks:
   build:
     cmds:
-      - go build -o .bin/{{.BINARY_NAME}}
-  
-  run: 
+      - go build -C cmd/app -o ../../.bin/{{.BINARY_NAME}}
+
+  run:
     cmds:
       - task: build
       - ./.bin/{{.BINARY_NAME}}
-  
+
   test:
     cmds:
       - task: build
